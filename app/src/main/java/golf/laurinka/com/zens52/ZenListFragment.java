@@ -8,7 +8,7 @@ import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
 
-import golf.laurinka.com.zens52.dummy.ZensDirectory;
+import golf.laurinka.com.zens52.content.ZensDirectory;
 
 /**
  * A list fragment representing a list of Zens. This fragment
@@ -72,7 +72,7 @@ public class ZenListFragment extends ListFragment {
         super.onCreate(savedInstanceState);
 
         // TODO: replace with a real list adapter.
-        setListAdapter(new ArrayAdapter<ZensDirectory.DummyItem>(
+        setListAdapter(new ArrayAdapter<ZensDirectory.ZenItem>(
                 getActivity(),
                 android.R.layout.simple_list_item_activated_1,
                 android.R.id.text1,

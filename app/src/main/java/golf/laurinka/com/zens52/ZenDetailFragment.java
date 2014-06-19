@@ -8,7 +8,7 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 
-import golf.laurinka.com.zens52.dummy.ZensDirectory;
+import golf.laurinka.com.zens52.content.ZensDirectory;
 
 /**
  * A fragment representing a single Zen detail screen.
@@ -26,7 +26,7 @@ public class ZenDetailFragment extends Fragment {
     /**
      * The dummy content this fragment is presenting.
      */
-    private ZensDirectory.DummyItem mItem;
+    private ZensDirectory.ZenItem mItem;
 
     /**
      * Mandatory empty constructor for the fragment manager to instantiate the
