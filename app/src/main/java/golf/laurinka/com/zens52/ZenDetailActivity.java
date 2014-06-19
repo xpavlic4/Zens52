@@ -6,6 +6,9 @@ import android.support.v7.app.ActionBarActivity;
 import android.support.v4.app.NavUtils;
 import android.view.MenuItem;
 
+import com.ubikod.capptain.android.sdk.CapptainAgent;
+import com.ubikod.capptain.android.sdk.CapptainAgentUtils;
+
 
 /**
  * An activity representing a single Zen detail screen. This
@@ -64,5 +67,19 @@ public class ZenDetailActivity extends ActionBarActivity {
             return true;
         }
         return super.onOptionsItemSelected(item);
+    }
+    @Override
+    protected void onResume()
+    {
+        super.onResume();
+        String activityNameOnCapptain = CapptainAgentUtils.buildCapptainActivityName(((Object) this).getClass()); // Uses short class name and removes "Activity" at the end.
+        CapptainAgent.getInstance(this).startActivity(this, activityNameOnCapptain, null);
+    }
+
+    @Override
+    protected void onPause()
+    {
+        super.onPause();
+        CapptainAgent.getInstance(this).endActivity();
     }
 }
