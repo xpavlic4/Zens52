@@ -1,6 +1,7 @@
 package golf.laurinka.com.zens52;
 
 import android.app.Activity;
+import android.os.Build;
 import android.os.Bundle;
 import android.support.v4.app.ListFragment;
 import android.view.View;
@@ -71,10 +72,14 @@ public class ZenListFragment extends ListFragment {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
+        int layout = (Build.VERSION.SDK_INT >= Build.VERSION_CODES.HONEYCOMB) ?
+                android.R.layout.simple_list_item_activated_1 :
+                android.R.layout.simple_list_item_1;
+
         // TODO: replace with a real list adapter.
         setListAdapter(new ArrayAdapter<ZensDirectory.DummyItem>(
                 getActivity(),
-                android.R.layout.simple_list_item_activated_1,
+                layout,
                 android.R.id.text1,
                 ZensDirectory.ITEMS));
     }
