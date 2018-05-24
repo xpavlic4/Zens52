@@ -2,12 +2,10 @@ package golf.laurinka.com.zens52;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.v7.app.ActionBarActivity;
 import android.support.v4.app.NavUtils;
+import android.support.v7.app.AppCompatActivity;
 import android.view.MenuItem;
 
-import com.ubikod.capptain.android.sdk.CapptainAgent;
-import com.ubikod.capptain.android.sdk.CapptainAgentUtils;
 
 
 /**
@@ -19,7 +17,7 @@ import com.ubikod.capptain.android.sdk.CapptainAgentUtils;
  * This activity is mostly just a 'shell' activity containing nothing
  * more than a {@link ZenDetailFragment}.
  */
-public class ZenDetailActivity extends ActionBarActivity {
+public class ZenDetailActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -68,18 +66,5 @@ public class ZenDetailActivity extends ActionBarActivity {
         }
         return super.onOptionsItemSelected(item);
     }
-    @Override
-    protected void onResume()
-    {
-        super.onResume();
-        String activityNameOnCapptain = CapptainAgentUtils.buildCapptainActivityName(((Object) this).getClass()); // Uses short class name and removes "Activity" at the end.
-        CapptainAgent.getInstance(this).startActivity(this, activityNameOnCapptain, null);
-    }
 
-    @Override
-    protected void onPause()
-    {
-        super.onPause();
-        CapptainAgent.getInstance(this).endActivity();
-    }
 }
